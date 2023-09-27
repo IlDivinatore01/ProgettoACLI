@@ -13,13 +13,27 @@
   <div class="container">
     <h1>Calcolatore di Bevande</h1>
     <div class="form-group">
-      <input type="text" id="beverage1" class="beverage form-control" value="Coca-Cola" readonly>
-      <input type="number" id="quantity1" class="quantity form-control" placeholder="Quantità">
+      <div class="input-group">
+        <input type="text" id="beverage1" class="beverage form-control" value="Coca-Cola" readonly>
+        <input type="number" id="quantity1" class="quantity form-control" placeholder="Quantità">
+        <select id="unit1" class="unit form-control">
+          <option value="bottiglia">Bottiglia</option>
+          <option value="scatola">Scatola</option>
+          <option value="pacco">Pacco</option>
+        </select>
+      </div>
     </div>
     <div class="form-group">
-      <input type="text" id="beverage2" class="beverage form-control" value="Pepsi" readonly>
-      <input type="number" id="quantity2" class="quantity form-control" placeholder="Quantità">
-    </div>
+      <div class="input-group">
+        <input type="text" id="beverage2" class="beverage form-control" value="Pepsi" readonly>
+        <input type="number" id="quantity2" class="quantity form-control" placeholder="Quantità">
+        <select id="unit2" class="unit form-control">
+          <option value="bottiglia">Bottiglia</option>
+          <option value="scatola">Scatola</option>
+          <option value="pacco">Pacco</option>
+        </select>
+      </div>
+    </div> 
     <div id="dynamic-fields">
       <!-- Campi dinamici saranno qui -->
     </div>
@@ -36,4 +50,6 @@
 </body>
 
 </html>
+
+
 

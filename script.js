@@ -1,4 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Funzione per aggiungere le bevande predefinite
+    function addPredefinedBeverages() {
+      const predefinedContainer = document.getElementById("predefined-beverages");
+  
+      const predefinedBeverages = [
+        { name: "Coca-Cola" },
+        { name: "Pepsi" },
+        { name: "Fanta" },
+        { name: "Acqua", defaultUnit: "scatola"},
+        { name: "Tè" },
+        // Aggiungi altre bevande predefinite qui
+      ];
+  
+      predefinedBeverages.forEach(function (beverage, index) {
+        const beverageDiv = document.createElement("div");
+        beverageDiv.classList.add("form-group");
+        beverageDiv.innerHTML = `
+          <div class="input-group">
+            <input type="text" class="beverage form-control" value="${beverage.name}" readonly>
+            <input type="number" class="quantity form-control" placeholder="Quantità">
+            <select class="unit form-control">
+            <option value="bottiglia" ${beverage.defaultUnit === "bottiglia" ? 'selected' : ''}>Bottiglia</option>
+            <option value="scatola" ${beverage.defaultUnit === "scatola" ? 'selected' : ''}>Scatola</option>
+            <option value="pacco" ${beverage.defaultUnit === "pacco" ? 'selected' : ''}>Pacco</option>
+            </select>
+          </div>
+        `;
+        predefinedContainer.appendChild(beverageDiv);
+      });
+    }
+  
+    addPredefinedBeverages();
+  
     const calculateButton = document.getElementById("calculate-button");
     const result = document.getElementById("result");
     const output = document.getElementById("output");
@@ -6,35 +39,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const addBeverageButton = document.getElementById("add-beverage");
     const dynamicFields = document.getElementById("dynamic-fields");
     let dynamicFieldIndex = 1;
-
+  
     calculateButton.addEventListener("click", function () {
       let text = "";
-      const quantities = document.querySelectorAll(".quantity");
-      const units = document.querySelectorAll(".unit");
+      const predefinedContainers = document.querySelectorAll('#predefined-beverages .form-group');
+      const dynamicContainers = document.querySelectorAll('#dynamic-fields .form-group');
   
-      for (let i = 0; i < quantities.length; i++) {
-        const quantity = parseInt(quantities[i].value.trim());
-        const beverageInput = document.querySelector(`#beverage${i + 1}`);
-        const unit = units[i].value;
+      predefinedContainers.forEach(function (container) {
+        const quantity = parseInt(container.querySelector('.quantity').value.trim());
+        const unit = container.querySelector('.unit').value;
+        const beverageName = container.querySelector('.beverage').value.trim();
   
-        if (!isNaN(quantity) && quantity >= 0 && beverageInput) {
-          const beverageName = beverageInput.value.trim();
+        if (!isNaN(quantity) && quantity > 0) {
           const unitText = getUnitText(unit, quantity);
           text += `${beverageName}: ${quantity} ${unitText}\n`;
         }
-      }
+      });
   
-      const dynamicQuantityInputs = document.querySelectorAll("#dynamic-fields .quantity");
-      const dynamicBeverageInputs = document.querySelectorAll("#dynamic-fields .beverage");
-      const dynamicUnits = document.querySelectorAll("#dynamic-fields .unit");
+      dynamicContainers.forEach(function (container) {
+        const quantity = parseInt(container.querySelector('.quantity').value.trim());
+        const unit = container.querySelector('.unit').value;
+        const beverageName = container.querySelector('.beverage').value.trim();
   
-      dynamicQuantityInputs.forEach(function (dynamicQuantityInput, index) {
-        const quantity = parseInt(dynamicQuantityInput.value.trim());
-        const beverageInput = dynamicBeverageInputs[index];
-        const unit = dynamicUnits[index].value;
-  
-        if (!isNaN(quantity) && quantity >= 0 && beverageInput) {
-          const beverageName = beverageInput.value.trim();
+        if (!isNaN(quantity) && quantity > 0) {
           const unitText = getUnitText(unit, quantity);
           text += `${beverageName}: ${quantity} ${unitText}\n`;
         }

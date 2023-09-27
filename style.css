@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #fff;
 }
 
 .container {
@@ -9,8 +9,6 @@ body {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -37,9 +35,6 @@ input[type="number"] {
 }
 
 button {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
     padding: 10px 20px;
     cursor: pointer;
 }
@@ -52,33 +47,22 @@ button {
     display: none;
 }
 
-#output-text {
+#output {
     white-space: pre-line;
     font-weight: bold;
     color: #333;
 }
 
 #copy-button {
-    background-color: #333;
-    color: #fff;
     margin-top: 10px;
-    padding: 10px 20px;
-}
-
-#copy-button:hover {
-    background-color: #555;
 }
 
 #add-beverage {
     background-color: #5cb85c;
     color: #fff;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
 }
 
-#add-beverage:hover {
-    background-color: #449d44;
+#calculate-button {
+    background-color: #007BFF;
+    color: #fff;
 }
-
-

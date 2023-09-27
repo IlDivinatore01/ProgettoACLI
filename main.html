@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calcolatore di Bevande</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Calcolatore di Bevande</h1>
+    <div class="form-group">
+      <label for="beverage1">Bevanda 1:</label>
+      <input type="text" id="beverage1" class="beverage" value="Coca-Cola" readonly>
+      <input type="number" id="quantity1" class="quantity" placeholder="Quantità">
+    </div>
+    <div class="form-group">
+      <label for="beverage2">Bevanda 2:</label>
+      <input type="text" id="beverage2" class="beverage" value="Pepsi" readonly>
+      <input type="number" id="quantity2" class="quantity" placeholder="Quantità">
+    </div>
+    <div id="dynamic-fields">
+      <!-- Campi dinamici saranno qui -->
+    </div>
+    <button id="add-beverage">+ Aggiungi Bevanda</button>
+    <button id="calculate-button">Calcola</button>
+    <div id="result" class="hidden">
+      <h2>Risultato:</h2>
+      <pre id="output"></pre>
+      <button id="copy-button">Copia Testo</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
+
+
+

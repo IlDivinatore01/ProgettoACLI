@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calcolatore di Bevande</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore di Bevande</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Calcolatore di Bevande</h1>
-    <form>
-      <div id="predefined-beverages">
-        <!-- Bevande predefinite saranno aggiunte qui -->
-      </div>
-      <div id="dynamic-fields">
-        <!-- Campi dinamici saranno qui -->
-      </div>
-      <button type="button" id="add-beverage" class="btn btn-success">+ Aggiungi Bevanda</button>
-      <button type="button" id="calculate-button" class="btn btn-primary">Calcola</button>
-    </form>
-    <div id="result" class="hidden">
-      <h2>Risultato:</h2>
-      <pre id="output"></pre>
-      <button id="copy-button" class="btn btn-secondary">Copia Testo</button>
+    <div class="container">
+        <h1 class="text-center mb-4">Calcolatore di Bevande</h1>
+        <form>
+            <div class="beverage-section" id="predefined-beverages">
+                <!-- Bevande predefinite saranno aggiunte qui -->
+            </div>
+            <div class="beverage-section" id="custom-section">
+                <h2>Altro</h2>
+                <div id="dynamic-fields">
+                    <!-- Campi dinamici saranno qui -->
+                </div>
+            </div>
+            <button type="button" id="add-beverage" class="btn btn-success mb-3">+ Aggiungi Bevanda</button>
+            <button type="button" id="calculate-button" class="btn btn-primary">Calcola</button>
+        </form>
+        <div id="result" class="hidden mt-4">
+            <div id="order-date">
+                <!-- La data verrà inserita qui -->
+            </div>
+            <pre id="output" class="mt-3"></pre>
+            <button id="copy-button" class="btn btn-secondary mt-3">Copia Testo</button>
+        </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 </html>

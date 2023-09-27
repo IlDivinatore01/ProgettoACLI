@@ -1,19 +1,26 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #fff;
+    background-color: #f8f9fa; /* Colore di sfondo leggermente grigio */
 }
 
 .container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #dcdcdc; /* Colore del bordo leggermente più chiaro */
     border-radius: 5px;
+    background-color: #fff; /* Sfondo bianco */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombra leggera */
 }
 
 h1 {
     color: #007BFF;
-    text-align: center;
+}
+
+h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .form-group {
@@ -21,7 +28,6 @@ h1 {
 }
 
 label {
-    display: block;
     font-weight: bold;
     margin-bottom: 5px;
 }
@@ -36,7 +42,7 @@ input[type="number"],
 select {
     flex: 1;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #dcdcdc; /* Colore del bordo leggermente più chiaro */
     border-radius: 3px;
 }
 
@@ -57,18 +63,4 @@ button {
     white-space: pre-line;
     font-weight: bold;
     color: #333;
-}
-
-#copy-button {
-    margin-top: 10px;
-}
-
-#add-beverage {
-    background-color: #5cb85c;
-    color: #fff;
-}
-
-#calculate-button {
-    background-color: #007BFF;
-    color: #fff;
 }

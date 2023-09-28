@@ -1,0 +1,22 @@
+{
+    "sections": [
+      {
+        "title": "Bevande Gassate",
+        "beverages": [
+          { "name": "Coca-Cola" },
+          { "name": "Pepsi" },
+          { "name": "Fanta" }
+        ]
+      },
+      {
+        "title": "Bevande non Gassate",
+        "beverages": [
+          { "name": "Acqua", "defaultUnit": "scatola" },
+          { "name": "Tè" },
+          { "name": "Cedrata" }
+        ]
+      }
+
+    ]
+  }
+  

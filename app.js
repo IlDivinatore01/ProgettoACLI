@@ -42,6 +42,7 @@ export function initialize() {
 
   // Gestore per il clic sul pulsante di calcolo
   function handleCalculateClick() {
+    console.log("handleCalculateClick() avviato");
     let text = "";
     const addedBeverages = new Set();
     const dynamicContainers = document.querySelectorAll('#dynamic-fields .form-group');
@@ -54,10 +55,15 @@ export function initialize() {
     const output = document.getElementById("output");
     output.textContent = text;
 
+    console.log("Numero di predefinedContainers:", predefinedContainers.length);
+
     predefinedContainers.forEach(container => {
       const quantity = parseInt(container.querySelector('.quantity').value.trim());
       const unit = container.querySelector('.unit').value;
       const beverageName = container.querySelector('.beverage').value.trim();
+
+      console.log(container); // Stampa l'elemento HTML selezionato
+      console.log(quantity, unit, beverageName)
 
       if (!isNaN(quantity) && quantity > 0) {
         const unitText = getUnitText(unit, quantity);
@@ -67,6 +73,7 @@ export function initialize() {
           text += beverageText;
           addedBeverages.add(beverageText);
         }
+        console.log("handleCalculateClick() completato");
       }
     });
 
@@ -178,7 +185,7 @@ export function initialize() {
   addBeverageButton.addEventListener("click", handleAddBeverageClick);
 
   // Carica il file JSON
-  fetch('http://localhost:8080/bevande.json')
+  fetch('bevande.json')
     .then(response => response.json())
     .then(data => {
       sections = data.sections;
@@ -224,5 +231,17 @@ export function initialize() {
       sectionContainer.appendChild(beverageContainer);
       predefinedContainer.appendChild(sectionContainer);
     });
+    
+ // Alla fine della funzione, verifica quali bevande predefinite sono presenti
+ const predefinedBeverages = predefinedContainer.querySelectorAll('.beverage');
+
+ console.log("Numero di bevande predefinite:", predefinedBeverages.length);
+ console.log("Bevande predefinite presenti:");
+ predefinedBeverages.forEach(beverage => {
+   console.log(beverage.value);
+ });
+
   }
 }
+
+
